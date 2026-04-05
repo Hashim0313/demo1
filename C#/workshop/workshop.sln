@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36401.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "workshop2", "workshop2\workshop2.csproj", "{1A68638A-CDF3-4E40-AB56-372755A95523}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "struct activity 1", "struct activity\struct activity 1.csproj", "{C4DC601C-B385-48D8-8FFD-AF2B1681BCA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "struct activity 2", "struct activity 2\struct activity 2.csproj", "{93CC52D3-D938-4DCB-B9F4-21D8F0C8BB7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "struct activity 3", "struct activity 3\struct activity 3.csproj", "{5A1E3791-5983-4EE9-8A32-6520111AA280}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "struct activity 4", "struct activity 4\struct activity 4.csproj", "{104EEFD6-B254-4CB1-9349-6A67B885E6DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "struct activity 5", "struct activity 5\struct activity 5.csproj", "{139512BA-5537-4E44-9B67-F7FF99846BE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "workshop 4", "workshop 4\workshop 4.csproj", "{1D2BBF24-04E7-4041-8433-694C8B85F100}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A68638A-CDF3-4E40-AB56-372755A95523}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A68638A-CDF3-4E40-AB56-372755A95523}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A68638A-CDF3-4E40-AB56-372755A95523}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A68638A-CDF3-4E40-AB56-372755A95523}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4DC601C-B385-48D8-8FFD-AF2B1681BCA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4DC601C-B385-48D8-8FFD-AF2B1681BCA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4DC601C-B385-48D8-8FFD-AF2B1681BCA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4DC601C-B385-48D8-8FFD-AF2B1681BCA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93CC52D3-D938-4DCB-B9F4-21D8F0C8BB7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93CC52D3-D938-4DCB-B9F4-21D8F0C8BB7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93CC52D3-D938-4DCB-B9F4-21D8F0C8BB7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93CC52D3-D938-4DCB-B9F4-21D8F0C8BB7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A1E3791-5983-4EE9-8A32-6520111AA280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A1E3791-5983-4EE9-8A32-6520111AA280}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A1E3791-5983-4EE9-8A32-6520111AA280}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A1E3791-5983-4EE9-8A32-6520111AA280}.Release|Any CPU.Build.0 = Release|Any CPU
+		{104EEFD6-B254-4CB1-9349-6A67B885E6DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{104EEFD6-B254-4CB1-9349-6A67B885E6DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{104EEFD6-B254-4CB1-9349-6A67B885E6DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{104EEFD6-B254-4CB1-9349-6A67B885E6DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{139512BA-5537-4E44-9B67-F7FF99846BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{139512BA-5537-4E44-9B67-F7FF99846BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{139512BA-5537-4E44-9B67-F7FF99846BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{139512BA-5537-4E44-9B67-F7FF99846BE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D2BBF24-04E7-4041-8433-694C8B85F100}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D2BBF24-04E7-4041-8433-694C8B85F100}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D2BBF24-04E7-4041-8433-694C8B85F100}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D2BBF24-04E7-4041-8433-694C8B85F100}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E30F7425-5137-4CD7-B45A-68C95A3C3340}
+	EndGlobalSection
+EndGlobal
