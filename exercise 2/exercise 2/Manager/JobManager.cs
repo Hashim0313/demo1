@@ -1,0 +1,43 @@
+﻿using exercise_2.interfaces;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using exercise_2.models;
+
+
+
+namespace exercise_2.Manager
+{
+    public class JobManager : IJob
+    {
+        public Job[] jobs = new Job[100];
+        private int count = 0;
+
+
+        public void AddJob(Job job)
+        {
+            if (count <jobs.Length)
+            {
+                job.Id = count + 1;
+                jobs[count] = job;
+                count++;
+            }
+            else
+            {
+                Console.WriteLine("Job list is full ");
+            }
+        }
+
+        public Job[]GetJob()
+        {
+            Job[]result = new Job[count];
+            for (int i = 0; i < count; i++)
+            {
+                result[i] = jobs[i];
+            }
+            return result;
+        }
+    }
+}

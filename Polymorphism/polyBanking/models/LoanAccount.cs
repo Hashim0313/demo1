@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace polyBanking.models
+{
+    public abstract class LoanAccount : BankAccount
+    {
+        public LoanAccount(int accountNumber, string accountHolder, decimal initialBalance)
+            : base(accountNumber, accountHolder, initialBalance)
+        {
+        }
+        public abstract decimal CalculateInterest();
+    }
+
+
+  public class HomeLoan : LoanAccount
+    {
+        public HomeLoan(int accountNumber, string accountHolder, decimal initialBalance)
+            : base(accountNumber, accountHolder, initialBalance)
+        {
+        }
+        public override decimal CalculateInterest()
+        {
+            return GetBalance() * 0.07m; // 5% interest
+        }
+    }
+
+
+}
