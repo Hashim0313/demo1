@@ -1,0 +1,66 @@
+﻿@page "{id:int}"
+@model Razortask1.Pages.Appointmentpage.DeleteApModel
+@{
+}
+
+
+<h2>Cancel Appointment</h2>
+
+
+<P>are you sure you want to cancel this Appointment</P>
+
+<div>
+
+    <strong>Patient Name</strong> @Model.Appointmentd.PatientName
+
+</div>
+
+<div>
+
+    <strong>Doctor Name</strong> @Model.Appointmentd.Doctor.Name
+
+</div>
+
+
+<div>
+
+    <strong>Appointment Date</strong> @Model.Appointmentd.AppointmentDate
+
+</div>
+
+
+
+<div>
+    <form method="post">
+
+
+        <input type="hidden" asp-for="Appointmentd.AppointmentId" />
+
+        <button type="submit" class="btn btn-danger">Yes</button>
+
+        <a asp-page="ReadAp" class="btn btn-secondary">Cancel</a>
+
+    </form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

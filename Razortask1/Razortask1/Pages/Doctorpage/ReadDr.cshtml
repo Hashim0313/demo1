@@ -1,0 +1,87 @@
+﻿@page
+@model Razortask1.Pages.Doctorpage.ReadDrModel
+@{
+}
+
+
+
+
+<h2> Doctors </h2>
+
+
+<form method="get" class="form-check-inline mb-3">
+
+
+
+    <input type="text" asp-for="SearchTerm" value="@Model.SearchTerm" class="form-control mr-2" placeholder="Search by name " />
+
+    <button type="submit" class="btn btn alert-primary">Search</button>
+
+    <a asp-page="ReadDr" class="btn btn-secondary">Clear</a>
+
+
+</form>
+
+
+
+
+<a asp-page="CreateDr" class="btn btn-primary">Add Doctor</a>
+
+
+<table class="table table-bordered mt-3">
+
+
+
+
+    <thead>
+
+        <tr>
+
+        <th>ID</th>
+        <th>Doctor Name</th>
+        <th>Specialization</th>
+       
+        </tr>
+
+    </thead>
+
+
+    <tbody>
+
+        @foreach (var Doc in Model.DocList)
+        {
+            <tr>
+
+                <td>@Doc.DoctorId</td>
+                <td>@Doc.Name</td>
+                <td>@Doc.Specialization</td>
+
+
+                <td>
+
+                    <a asp-page="UpdateDr" asp-route-id="@Doc.DoctorId" class=" btn btn-warning">Edit</a>
+                    <a asp-page="DeleteDr" asp-route-id="@Doc.DoctorId" class=" btn btn-danger">Delete</a>
+
+
+                </td>
+
+
+
+
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
+
+
+
+
+
+
+
+
+

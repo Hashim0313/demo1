@@ -1,0 +1,52 @@
+﻿@page
+@model RazorExercise.Pages.Userpage.UserProfileModel
+
+<h2>Welcome @Model.Name</h2>
+
+
+<h3>All Jobs</h3>
+
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle">
+        <thead class="table-dark text-center">
+            <tr>
+          
+                <th>Job Id</th>
+                <th>Company</th>
+                <th>Job Title</th>
+                <th>Location</th>
+                <th>Salary</th>
+
+                <th>Actions</th>
+                
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var a in Model.Jobs)
+            {
+                <tr>
+                    
+                    <td>@a.JobId</td>
+                    <td>@a.Company</td>
+                    <td>@a.JobTitle</td>
+                    <td>@a.Location</td>
+                    <td>@a.Salary</td>
+
+                    <td>
+
+                         <a asp-page="/UserPage/AppliedJobs" asp-route-id="@a.JobId" class="btn btn-primary" >Apply Job</a>
+
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+
+    

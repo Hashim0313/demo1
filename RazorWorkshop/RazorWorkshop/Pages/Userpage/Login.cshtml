@@ -1,0 +1,61 @@
+﻿@page
+@model RazorWorkshop.Pages.Userpage.LoginModel
+@{
+}
+
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0"><i class="bi bi-box-arrow-in-right me-2"></i>Login</h3>
+                </div>
+
+
+
+                <div class="card-body">
+                    <form method="post">
+
+
+                        <div class="mb-4">
+                            <label asp-for="NewLogUser.Email" class="form-label fw-semibold">
+                                <i class="bi bi-envelope-fill me-2"></i>Email
+                            </label>
+                            <input type="email" asp-for="NewLogUser.Email" class="form-control" placeholder="Enter your email" required />
+                            <span asp-validation-for="NewLogUser.Email" class="text-danger"></span>
+                        </div>
+
+
+                        <div class="mb-4">
+                            <label asp-for="NewLogUser.Password" class="form-label fw-semibold">
+                                <i class="bi bi-lock-fill me-2"></i>Password
+                            </label>
+                            <input type="password" asp-for="NewLogUser.Password" class="form-control" placeholder="Enter your password" required />
+                            <span asp-validation-for="NewLogUser.Password" class="text-danger"></span>
+                        </div>
+
+
+
+                        <div class="d-grid mb-3">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <i class="bi bi-box-arrow-in-right me-2"></i>Login
+                            </button>
+                        </div>
+
+
+
+                        <div class="text-center">
+                            <a href="/Userpage/Register" class="text-decoration-none">
+                                <i class="bi bi-person-plus-fill me-1"></i>Don't have an account? Register
+                            </a>
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

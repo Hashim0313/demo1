@@ -1,0 +1,51 @@
+﻿@page "{id:int}"
+@model Razortask1.Pages.Doctorpage.UpdateDrModel
+@{
+}
+
+
+<h2>Update doctor</h2>
+
+
+<form method="post">
+
+
+
+
+    <input type="hidden" asp-for="Doctors.DoctorId" />
+
+
+
+    <div class="mb-3">
+
+        <label>Name</label>
+        <input asp-for="Doctors.Name" class="form-control" />
+
+    </div>
+
+
+
+    <div class="mb-3">
+
+        <label>Specialization</label>
+        <input asp-for="Doctors.Specialization" class="form-control" />
+
+    </div>
+
+
+
+    <button type="submit" class="btn btn-success">Update</button>
+
+    <a asp-page="ReadDr" class="btn btn-secondary">Cancel</a>
+
+
+
+
+
+
+
+
+</form>
+
+
+

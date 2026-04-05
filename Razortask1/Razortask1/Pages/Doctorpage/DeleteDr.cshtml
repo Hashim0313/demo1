@@ -1,0 +1,55 @@
+﻿@page "{id:int}"
+@model Razortask1.Pages.Doctorpage.DeleteDrModel
+@{
+}
+
+
+<h2>Delete Doctor</h2>
+
+
+
+<P>are you sure you want to delete this doctor ? </P>
+
+<div>
+
+    <strong>Doctor Name</strong> @Model.Docs.Name
+
+</div>
+
+<div>
+
+    <strong>Specialization</strong> @Model.Docs.Specialization
+
+</div>
+
+
+
+
+<div>
+    <form method="post">
+
+        <button type="submit" class="btn btn-danger">Yes</button>
+
+        <a asp-page="ReadDr" class="btn btn-secondary">Cancel</a>
+
+    </form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

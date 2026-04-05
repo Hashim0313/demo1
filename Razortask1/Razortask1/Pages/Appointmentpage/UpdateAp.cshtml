@@ -1,0 +1,68 @@
+﻿@page
+@model Razortask1.Pages.Appointmentpage.UpdateApModel
+@{
+}
+
+
+
+
+<h2>Update Appointment</h2>
+
+<form method="post">
+
+    <input type="hidden" asp-for="Appointments.AppointmentId" />
+
+
+    <div class="mb-3">
+
+        <label>Name</label>
+
+        <input asp-for="Appointments.PatientName" class="form-control" />
+
+    </div>
+
+
+
+
+    <div class="mb-3">
+
+        <label>date</label>
+
+        <input asp-for="Appointments.AppointmentDate" class="form-control" />
+
+    </div>
+
+
+
+
+    <div class="mb-3">
+
+        <label>Doctor</label>
+
+        <input asp-for="Appointments.Doctor.Name" class="form-control" />
+
+    </div>
+
+
+
+
+    <button type="submit" class="btn btn-success">Update</button>
+
+    <a asp-page="ReadAp" class="btn btn-secondary">Cancel</a>
+
+
+
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+

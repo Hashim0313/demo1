@@ -1,0 +1,50 @@
+using RazorExercise.Extension;
+using Microsoft.EntityFrameworkCore;
+using RazorExercise.Models;
+
+
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddRazorPages();
+
+
+builder.Services.AddAppServices(builder.Configuration);
+builder.Services.AddDbContext<RazorExerciseContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("RazorExercise")));
+
+
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Error");
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
+}
+
+app.UseHttpsRedirection();
+
+
+app.UseSession();
+
+
+app.UseRouting();
+
+app.UseAuthorization();
+
+app.MapStaticAssets();
+app.MapRazorPages()
+   .WithStaticAssets();
+
+app.MapGet("/", context =>
+{
+    context.Response.Redirect("/Userpage/Register");
+    return Task.CompletedTask;
+});
+
+
+app.Run();

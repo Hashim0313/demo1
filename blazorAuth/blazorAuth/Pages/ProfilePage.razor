@@ -1,0 +1,43 @@
+﻿@page "/ProfilePage"
+@using blazorAuth.Services
+
+@inject AuthService AuthService
+@inject NavigationManager Navigation
+@inject IHttpContextAccessor httpcontext
+
+
+@if(httpcontext.HttpContext?.Session?.GetString("Username")==null)
+{
+    
+    <p class="text-danger">you are not logged in</p>
+    <button @onclick="GoToLogin"  class=" btn btn-primary">Go to login</button>
+
+}
+
+else
+{
+    
+    <h3>Welcome, @httpcontext.HttpContext.Session.GetString("Username")!</h3>
+    <button @onclick="Logout" class="btn btn-danger">Logout</button>
+
+}
+
+
+
+
+@code 
+{
+
+    private void GoToLogin()
+    {
+        Navigation.NavigateTo("/Login");
+    }
+
+    private void Logout()
+    {
+        AuthService.Logout();
+        Navigation.NavigateTo("/Login");
+
+    }
+
+}

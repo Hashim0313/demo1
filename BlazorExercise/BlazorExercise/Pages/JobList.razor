@@ -1,0 +1,75 @@
+﻿@page "/JobList"
+
+@using BlazorExercise.Interface
+@using BlazorExercise.Models
+@using BlazorExercise.Dto
+
+@inject IJobService jobService
+@inject NavigationManager Navigation
+
+
+
+
+
+
+@code 
+{
+
+    public IList<JobDto> Jobss=new List<JobDto>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Jobss = await jobService.GetAllJobsAsync();
+    }
+
+}
+
+
+
+<div class="container mt-4">
+
+    <div class="card shadow-lg">
+
+
+        <h3>Jobs</h3>
+
+        <div class=" table-responsive">
+
+            <table class="table table-hover table-bordered">
+                <thead class="tablealert-dark text-center">
+                    <tr>
+
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Location</th>
+                        <th>Salary</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @foreach (var job in Jobss)
+                    {
+                        <tr>
+
+                            <td>@job.Title</td>
+                            <td>@job.Description</td>
+                            <td>@job.Location</td>
+                            <td>@job.Salary</td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+

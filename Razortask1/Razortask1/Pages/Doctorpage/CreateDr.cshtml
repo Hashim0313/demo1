@@ -1,0 +1,37 @@
+﻿@page
+@model Razortask1.Pages.Doctorpage.CreateDrModel
+@{
+}
+
+
+<h2>Add Doctor</h2>
+
+<form method="post">
+
+    <div class="mb-3">
+
+        <label>Doctor Name </label>
+        <input asp-for="Doctor.Name" class="form-control" />
+
+    </div>
+
+    <div class="mb-3">
+
+        <label>Specialization </label>
+        <input asp-for="Doctor.Specialization" class="form-control" />
+
+    </div>
+
+
+    @* <a asp-page="ReadDr" class="btn btn-primary">Add Doctor</a> *@
+
+    <button type="submit" class="btn btn-primary">Save</button>
+  
+
+</form>
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+﻿@page "/"
+@page "/Login"
+
+@using blazorAuth.Services
+
+@inject AuthService AuthService
+@inject NavigationManager Navigation
+@inject IHttpContextAccessor httpcontext
+
+
+
+
+
+@code 
+{
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        await Task.Delay(1);
+
+
+        var context = httpcontext.HttpContext;
+
+        if (context != null && context.Session != null)
+        {
+            context.Session.SetString("TestKey", "Session Set Successfully");
+        }
+
+    }
+
+
+    private string username;
+    private string password;
+    private string errormessage;
+
+
+    private async Task LoginUser()
+    {
+        if (await AuthService.Login (username , password))
+        {
+            Navigation.NavigateTo("/ProfilePage");
+        }
+
+        else
+        {
+            errormessage = "invalid username or password";
+        }
+
+    }
+
+    private async Task RegisterUser()
+    {
+        Navigation.NavigateTo("/Register");
+    }
+
+}
+
+<div>
+
+
+    <label>Username</label>
+    <input @bind="username" class="form-control" />
+
+
+    <label>Password</label>
+    <input @bind="password" type="password" class="form-control" />
+
+
+    <button @onclick="LoginUser" class="btn btn-primary mt-2">Login</button>
+
+    <a class="btn btn-secondary mt-2" @onclick="RegisterUser">Register</a>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

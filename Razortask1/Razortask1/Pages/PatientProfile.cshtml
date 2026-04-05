@@ -1,0 +1,21 @@
+﻿@page
+@model Razortask1.Pages.PatientProfileModel
+@{
+    ViewData["Title"] = "Patient Profile";
+}
+
+<div class="container mt-5">
+    <div class="mb-4">
+        <h1 class="text-primary fw-bold">Welcome, @Model.ProfileName</h1>
+        <h5 class="text-secondary">@Model.ProfileRole</h5>
+        <p class="text-success">✅ Logged in successfully</p>
+    </div>
+
+    <div class="mb-3">
+        <a asp-page="/PDashboard" class="btn btn-outline-primary">View Info</a>
+    </div>
+
+    <div>
+        <a asp-page="/Login" class="btn btn-outline-danger">Log Out</a>
+    </div>
+</div>

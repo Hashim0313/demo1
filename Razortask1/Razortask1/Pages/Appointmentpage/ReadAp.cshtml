@@ -1,0 +1,93 @@
+﻿@page
+@model Razortask1.Pages.Appointmentpage.ReadApModel
+@{
+   
+}
+
+
+<h2>Appointments</h2>
+
+
+<form method="get" class="form-inline mb-3">
+
+
+    <input typeof="text" asp-for="SearchTerm" value="@Model.SearchTerm" class="form-control " placeholder="Search by patient Name..">
+    
+    <button type="submit" class="btn btn-primary">Search</button>
+
+    <a asp-page="ReadAp" class="btn btn-secondary m-lg-2">Clear</a> 
+
+</form>
+
+
+  
+
+
+
+<a asp-page="CreateAp" class=" btn btn-primary">Add Appointment</a>
+
+
+<table class="table table-bordered mt-3">
+
+
+    <thead>
+
+        <tr>
+
+            <th>Patient ID</th>
+            <th>Patient Name</th>
+            <th>Appointment Date</th>
+            <th>Doctor Name</th>
+            <th>Specialization</th>
+            <th>Actions</th>
+
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @foreach(var doccs in Model.DocList)
+        {
+            
+        
+        @foreach (var apnmts in doccs.Appointments)
+        {
+            <tr>
+
+
+                    <td>@apnmts.AppointmentId</td>
+                <td>@apnmts.PatientName</td>
+                <td>@apnmts.AppointmentDate</td>
+                <td>@doccs.Name</td>
+                <td>@doccs.Specialization</td>
+
+
+
+                
+                <td>
+                    <a asp-page="UpdateAp" asp-route-id="@apnmts.AppointmentId" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-page="DeleteAp" asp-route-id="@apnmts.AppointmentId" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+
+
+
+            </tr>
+        }
+        }
+
+    </tbody>
+
+
+
+</table>
+
+
+
+
+
+
+
+
+
+

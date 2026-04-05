@@ -1,0 +1,56 @@
+﻿@page "{id:int}"
+@model LibraryManagement.Pages.Books.EditModel
+@{
+}
+
+<h2>Update Book</h2>
+
+<form method="post">
+
+    <input type="hidden" asp-for="Books.BookId" />
+
+
+    <div class="mb-3">
+
+        <label>Name</label>
+
+        <input asp-for="Books.Bookname" class="form-control" />
+
+    </div>
+
+
+    <div class="mb-3">
+
+        <label>Author</label>
+
+        <input asp-for="Books.Author" class="form-control" />
+
+    </div>
+
+
+    <div class="mb-3">
+
+        <label>Price</label>
+
+        <input asp-for="Books.Price" class="form-control" />
+
+    </div>
+
+
+    <button type="submit" class="btn btn-success">Update</button>
+
+    <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+

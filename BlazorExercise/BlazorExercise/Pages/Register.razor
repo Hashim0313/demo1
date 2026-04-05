@@ -1,0 +1,124 @@
+﻿
+@page "/"
+@page "/Register"
+@using BlazorExercise.Dto
+@using BlazorExercise.Services
+@using BlazorExercise.Interface
+@inject IAuthService AuthService
+@inject NavigationManager Navigation
+
+
+@code 
+{
+    private UserDto userr = new();
+    private string message = "";
+
+    private async Task Registerr()
+    {
+        var success = await AuthService.Register(userr);
+        if(success)
+        {
+            Navigation.NavigateTo("Login");
+        }
+        else
+        {
+            message = "Email Already Exist";
+        }
+    }
+}
+
+
+
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+
+    <div class="card shadow-lg p-4" style="width:400px;">
+
+        <div class="card card-header"><h3>User Registration</h3></div>
+
+
+        <div class="card-body">
+
+
+
+            <EditForm Model="userr" OnValidSubmit="Registerr">
+
+                <DataAnnotationsValidator />
+
+
+                <div class="mb-3">
+
+                    <label class="form-label fw-bold">First Name : </label>
+
+                    <InputText class="form-control" @bind-Value="userr.FirstName" />
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label fw-bold">Last Name : </label>
+
+                    <InputText class="form-control" @bind-Value="userr.LastName" />
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label fw-bold">Email : </label>
+
+                    <InputText class="form-control" @bind-Value="userr.Email" />
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label fw-bold">Phone Number : </label>
+
+                    <InputText class="form-control" @bind-Value="userr.PhoneNumber" />
+
+                </div>
+
+
+                <div class="mb-3">
+
+                    <label class="form-label fw-bold">Password : </label>
+
+                    <InputText class="form-control" type="password" @bind-Value="userr.Password" />
+
+                </div>
+
+
+                <div class="text-center">
+
+                    <button type="submit" class="btn btn-success ">
+                        <i class="bg-info bi-person-plus"></i>Register
+                    </button>
+
+                </div>
+
+
+            </EditForm>
+
+
+
+            @if (!string.IsNullOrEmpty(message))
+            {
+                <div class="alert alert-danger text-center mt-3">@message</div>
+            }
+
+            <div class="text-center mt-3">
+                <p>Already have an account? <a href="/Login" class="text-decoration-none">Login</a></p>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+
+</div>

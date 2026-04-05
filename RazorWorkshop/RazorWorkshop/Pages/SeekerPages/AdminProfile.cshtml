@@ -1,0 +1,40 @@
+﻿@page
+@model RazorWorkshop.Pages.SeekerPages.AdminProfileModel
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="container py-5">
+    <div class="text-center mb-4">
+        <h2 class="fw-bold text-primary">Welcome, @Model.AdminName</h2>
+        <p class="text-muted">Your admin dashboard overview</p>
+    </div>
+
+    <div class="container bg-light rounded shadow-sm p-4">
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <div class="p-3 border rounded bg-white">
+                    <i class="bi bi-briefcase-fill text-info" style="font-size: 2rem;"></i>
+                    <h5 class="mt-2">Job Count</h5>
+                    <p class="fs-4 fw-semibold text-dark">@Model.JobsCount</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="p-3 border rounded bg-white">
+                    <i class="bi bi-person-fill text-success" style="font-size: 2rem;"></i>
+                    <h5 class="mt-2">Seeker Count</h5>
+                    <p class="fs-4 fw-semibold text-dark">@Model.SeekerCount</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="p-3 border rounded bg-white">
+                    <i class="bi bi-building-fill text-warning" style="font-size: 2rem;"></i>
+                    <h5 class="mt-2">Provider Count</h5>
+                    <p class="fs-4 fw-semibold text-dark">@Model.Providercount</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

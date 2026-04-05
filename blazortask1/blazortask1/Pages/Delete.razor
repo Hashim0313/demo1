@@ -1,0 +1,111 @@
+﻿@page "/Delete/{id:int}"
+
+
+@inject IEmployeeService EmployeeService
+@inject NavigationManager Navigation
+
+@using Microsoft.EntityFrameworkCore.Metadata.Internal
+@using blazortask1.Dto
+@using blazortask1.Service
+@using blazortask1.Interface
+
+
+
+<div class="container mt-5">
+
+
+
+    <h3>Delete Empoloyee</h3>
+
+    <div>
+
+        @if (employee == null)
+        {
+
+            <div class="text-center">
+                <div class="spinner-border text-danger" role="status"></div>
+                <p>Loading employee details...</p>
+            </div>
+
+        }
+
+
+        else
+        {
+            
+            <p>Are you sure you want to delete <b>@employee.Name </b>?</p>
+
+            <div class="d-flex justify-content-center">
+
+                <button class="btn btn-danger" @onclick = "ConfirmDelete">
+                    <i class="bi bi-trash"></i> yes delete
+                </button>
+
+
+
+                <button class="btn btn-secondary" @onclick="Cancel">
+                    <i class="bi bi-x-circle"></i> Cancel
+                </button>
+
+            </div>
+
+        }
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+@code 
+{
+    [Parameter] public int ID { get; set; }
+
+    private EmployeeDto employee;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        employee = await EmployeeService.GetEmployeeByIdAsync(ID);
+
+        if(employee == null)
+        {
+            Navigation.NavigateTo("/");
+        }
+
+    }
+
+
+
+    private async Task ConfirmDelete()
+    {
+
+        await EmployeeService.DeleteEmployeeAsync(ID);
+        Navigation.NavigateTo("Read");
+
+    }
+
+
+    private void Cancel()
+    {
+        Navigation.NavigateTo("/Read");
+    }
+
+
+}

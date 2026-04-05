@@ -1,0 +1,33 @@
+﻿@page
+@model Razortask1.Pages.AdminProfileModel
+@{
+    ViewData["Title"] = "Admin Profile";
+}
+
+<div class="container mt-5">
+    <h1 class="text-primary fw-bold">Welcome, @Model.ProfileName</h1>
+    <h5 class="text-secondary mb-3">@Model.ProfileRole</h5>
+    <p class="text-success">Login successful ✅</p>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <a asp-page="/Appointmentpage/ReadAp" class="btn btn-outline-primary w-100">Appointments</a>
+        </div>
+        <div class="col-md-6 d-flex align-items-center">
+            <span class="ms-2 text-muted">Total: @Model.AppoCount</span>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <a asp-page="/Doctorpage/ReadDr" class="btn btn-outline-primary w-100">Doctors</a>
+        </div>
+        <div class="col-md-6 d-flex align-items-center">
+            <span class="ms-2 text-muted">Total: @Model.DocCount</span>
+        </div>
+    </div>
+
+    <div class="text-start mt-4">
+        <a asp-page="/Login" class="btn btn-outline-danger">Logout</a>
+    </div>
+</div>

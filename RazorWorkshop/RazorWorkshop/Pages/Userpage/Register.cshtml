@@ -1,0 +1,87 @@
+﻿@page
+@model RazorWorkshop.Pages.Userpage.RegisterModel
+@{
+}
+
+
+
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-success text-white">
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="mb-4">
+                            <label asp-for="NewUser.Name" class="form-label fw-semibold">
+                                <i class="bi bi-person-fill me-2"></i>Name
+                            </label>
+                            <input type="text" asp-for="NewUser.Name" class="form-control" placeholder="Enter your full name" required />
+                            <span asp-validation-for="NewUser.Name" class="text-danger"></span>
+                        </div>
+
+
+
+
+                        <div class="mb-4">
+                            <label asp-for="NewUser.Email" class="form-label fw-semibold">
+                                <i class="bi bi-envelope-fill me-2"></i>Email
+                            </label>
+                            <input type="email" asp-for="NewUser.Email" class="form-control" placeholder="Enter your email address" required />
+                            <span asp-validation-for="NewUser.Email" class="text-danger"></span>
+                        </div>
+
+
+
+
+                        <div class="mb-4">
+                            <label asp-for="NewUser.Password" class="form-label fw-semibold">
+                                <i class="bi bi-lock-fill me-2"></i>Password
+                            </label>
+                            <input type="password" asp-for="NewUser.Password" class="form-control" placeholder="Create a secure password" required />
+                            <span asp-validation-for="NewUser.Password" class="text-danger"></span>
+                        </div>
+
+
+
+                        <div class="mb-4">
+                            <label asp-for="NewUser.role" class="form-label fw-semibold">
+                                <i class="bi bi-person-badge-fill me-2"></i>Role
+                            </label>
+                            <select asp-for="NewUser.role" class="form-select" required>
+                                <option value="" disabled selected>Select role</option>
+                                <option value="PROVIDER">PROVIDER</option>
+                                <option value="SEEKER">SEEKER</option>
+                                <option value="ADMIN">ADMIN</option>
+                            </select>
+                            <span asp-validation-for="NewUser.role" class="text-danger"></span>
+                        </div>
+
+
+
+                        <div class="d-grid mb-3">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <i class="bi bi-check-circle-fill me-2"></i>Register
+                            </button>
+                        </div>
+
+
+
+
+                        <div class="text-center">
+                            <a href="/Userpage/Login" class="text-decoration-none">
+                                <i class="bi bi-box-arrow-in-right me-1"></i>Already have an account? Login
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,106 @@
+﻿
+
+@page "/Create"
+@inject IEmployeeService EmployeeServices
+@inject NavigationManager Navigation
+
+@using blazortask1.Dto
+@using blazortask1.Interface
+@using blazortask1.Model
+@using blazortask1.Service
+@using Microsoft.AspNetCore.Components.Forms
+
+
+
+<div class="container mt-4">
+
+
+
+    <h3>Add Employee</h3>
+
+
+    <EditForm Model="newEmployee" OnValidSubmit="SaveEmployee">
+
+        <DataAnnotationsValidator />
+
+        <ValidationSummary class="alert alert-danger"/>
+
+
+        <div class="mb-3">
+
+            <label class="form-label">Name : </label>
+
+            <InputText class="form-control" @bind-Value="newEmployee.Name"/>
+
+            <ValidationMessage For="@(() => newEmployee.Name)" class="text-danger"/>
+
+
+        </div>
+
+
+        <div class="mb-3">
+
+            <label class="form-label">Position : </label>
+
+            <InputText class="form-control" @bind-Value="newEmployee.Position" />
+
+            <ValidationMessage For="@(() => newEmployee.Position)" class="text-danger" />
+
+
+        </div>
+
+
+
+        <div class="mb-3">
+
+            <label class="form-label">Salary : </label>
+
+            <InputNumber class="form-control" @bind-Value="newEmployee.Salary" />
+
+            <ValidationMessage For="@(() => newEmployee.Salary)" class="text-danger" />
+
+
+        </div>
+
+
+
+        <div>
+
+            <button type="submit" class="btn btn-primary">Save</button>
+
+            <button type="button" class="btn btn-secondary" @onclick = "Cancel" >Cancel</button>
+
+        </div>
+        
+
+    </EditForm>
+
+
+
+</div> 
+
+
+
+
+
+
+@code 
+{
+
+    private EmployeeDto newEmployee = new();
+
+
+    private async Task SaveEmployee()
+    {
+        await EmployeeServices.AddEmployeeAsync(newEmployee);
+        Navigation.NavigateTo("/Read");
+    }
+
+
+    public void Cancel()
+    {
+        Navigation.NavigateTo("/Read");
+    }
+
+
+}

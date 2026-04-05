@@ -1,0 +1,119 @@
+﻿@page "/"
+@page "/Read"
+
+@inject IEmployeeService employeeService
+@inject NavigationManager Navigation
+
+
+@using blazortask1.Dto
+@using blazortask1.Model
+@using blazortask1.Service
+@using blazortask1.Interface
+
+<div class="container mt-4">
+
+
+
+<h3>Employee Management</h3>
+
+<button class=" btn btn-success" @onclick="NavigateToCreate">Add Employee</button>
+
+
+
+<div>
+
+
+
+    @if (employees == null)
+        {
+            <div class="spinner-border text-primary" role="status"></div>
+            <p>Loading Employees...</p>
+        }
+
+
+        else if (employees.Count == 0)
+        {
+            <p class=" text-center text-muted">No employees found</p>
+        }
+
+
+
+
+        else 
+        {
+            <table class="table table-striped table-bordered">
+
+             <thead class="table-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Salary</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+
+
+                    <tbody>
+                        @foreach (var emp in employees)
+                    {
+                        <tr>
+
+
+                            <td>@emp.Name</td>
+                            <td>@emp.Position</td>
+                            <td>@emp.Salary</td>
+                            <td class="text-center">
+                                <button class="btn btn-warning btn-sm me-2" @onclick="() => NavigateToEdit(emp.ID)">Edit</button>
+                                <button class="btn btn-danger btn-sm" @onclick="() => NavigateToDelete(emp.ID)">Delete</button>
+                            </td>
+
+
+                        </tr>
+                    }
+
+                    </tbody>
+
+
+            </table>
+        }
+
+
+
+    </div>
+
+</div>
+
+@code 
+{
+
+
+    private List <EmployeeDto> employees = new();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        employees = await employeeService.GetEmployeeAsync();
+
+    }
+
+
+    private void NavigateToCreate()
+    {
+        Navigation.NavigateTo("/Create");
+    }
+
+
+    public void NavigateToEdit(int id)
+    {
+        Navigation.NavigateTo($"/Update/{id}");
+    }
+
+
+    public void NavigateToDelete(int id)
+    {
+        Navigation.NavigateTo($"/Delete/{id}");
+    }
+
+
+}

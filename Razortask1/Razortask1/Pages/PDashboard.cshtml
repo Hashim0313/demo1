@@ -1,0 +1,71 @@
+﻿@page
+@model Razortask1.Pages.PDashboardModel
+@{
+   
+}
+
+
+
+<h1 class="text-primary" >Available Doctors</h1>
+
+<table class="table">
+
+
+    <thead class="table-dark">
+
+
+        <tr>
+
+            <th>#</th>
+            <th>Name</th>
+            <th>Specialization</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+
+        @foreach(var doctor in Model.DoctorList)
+        {
+            <tr>
+
+                <td>@doctor.DoctorId</td>
+                <td>@doctor.Name</td>
+                <td>@doctor.Specialization</td>
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
+<div>
+
+    <a asp-page="/Appointmentpage/CreateAp" class="btn btn-outline-success">Book Appointment</a>
+
+   
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

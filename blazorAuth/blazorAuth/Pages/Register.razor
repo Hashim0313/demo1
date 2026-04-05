@@ -1,0 +1,71 @@
+﻿
+
+@page "/Register"
+@using blazorAuth.Services
+
+@inject AuthService AuthService
+@inject NavigationManager Navigation
+
+
+
+
+<h3>Register</h3>
+
+
+
+<div>
+
+
+    <label>UserName</label>
+
+    <input @bind="username" class="form-control" />
+
+
+    <label>Email</label>
+
+    <input @bind="email" type ="email" class="form-control" />
+
+
+    <label>Password</label>
+
+    <input @bind="password" type="password" class="form-control" />
+
+
+    <button @onclick= "RegisterUser" class="btn btn-success mt-2">Register</button>
+
+
+</div>
+
+
+
+
+
+
+@code
+{
+
+    private string username;
+
+    private string email;
+
+    private string password;
+
+    private string errormessage;
+
+
+
+    private async Task RegisterUser()
+    {
+        if(await AuthService.Register(username,password,email))
+        {
+            Navigation.NavigateTo("/Login", forceLoad: true);
+        }
+
+        else
+        {
+            errormessage = "Username already taken";
+        }
+    }
+
+
+}
